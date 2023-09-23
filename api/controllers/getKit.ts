@@ -1,13 +1,17 @@
 import { NextFunction } from 'express';
 import { CustomRequest, CustomResponse } from '../models/ApiData';
-import kitShippingData from '../KitShippingData';
+import { KitShippingDataViewModel } from '../models/KitShippingDataViewModel';
+import kitShippingData from '../data/KitShippingData';
 
-const getKit = async (req: CustomRequest<{ kitNumber: string }>, res: CustomResponse<string>, next: NextFunction) => {
+const getKit = async (
+    req: CustomRequest<{ kitNumber: string }>,
+    res: CustomResponse<KitShippingDataViewModel[]>,
+    next: NextFunction,
+) => {
     try {
         const kitNumber = req.body.kitNumber;
         const results = await kitShippingData.search(kitNumber);
-        console.log(results);
-        return res.json('done');
+        return res.json(results);
     } catch (e) {
         next(e);
     }

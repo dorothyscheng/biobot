@@ -1,5 +1,5 @@
 import { Document } from 'flexsearch';
-import { KitShippingDataViewModel } from './models/KitShippingDataViewModel';
+import { KitShippingDataViewModel } from '../models/KitShippingDataViewModel';
 
 type RawKitShippingData = {
     id: string;
@@ -37,7 +37,7 @@ class KitShippingData {
 
     public async search(searchTerm: string): Promise<KitShippingDataViewModel[]> {
         if (!this.document) {
-            console.error('NO DOCUMENT EXISTS');
+            console.error('Document index is undefined');
             return [];
         }
         const searchResults = await this.document.searchAsync<true>({

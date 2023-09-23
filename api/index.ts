@@ -2,7 +2,7 @@ import express, { ErrorRequestHandler, Express } from 'express';
 import { config } from 'dotenv';
 import cors from 'cors';
 import kitRoutes from './routes/kitRoutes';
-import kitShippingData from './KitShippingData';
+import kitShippingData from './data/KitShippingData';
 
 config();
 kitShippingData.initialize();
