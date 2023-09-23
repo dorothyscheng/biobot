@@ -5,7 +5,7 @@ import kitRoutes from './routes/kitRoutes';
 import kitShippingData from './KitShippingData';
 
 config();
-kitShippingData.loadData();
+kitShippingData.initialize();
 
 const app: Express = express();
 const port = process.env.PORT;

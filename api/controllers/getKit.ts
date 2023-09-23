@@ -5,8 +5,7 @@ import kitShippingData from '../KitShippingData';
 const getKit = async (req: CustomRequest<{ kitNumber: string }>, res: CustomResponse<string>, next: NextFunction) => {
     try {
         const kitNumber = req.body.kitNumber;
-        console.log(`searching for kit number ${kitNumber}`);
-        const results = await kitShippingData.searchData(kitNumber);
+        const results = await kitShippingData.search(kitNumber);
         console.log(results);
         return res.json('done');
     } catch (e) {
