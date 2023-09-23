@@ -1,8 +1,11 @@
-import express, { ErrorRequestHandler, Express, Request, Response } from 'express';
+import express, { ErrorRequestHandler, Express } from 'express';
 import { config } from 'dotenv';
 import cors from 'cors';
+import kitRoutes from './routes/kitRoutes';
+import kitShippingData from './KitShippingData';
 
 config();
+kitShippingData.loadData();
 
 const app: Express = express();
 const port = process.env.PORT;
@@ -10,12 +13,10 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/', (req, res) => {
-    res.send('Here i am!');
-});
+app.use('/', kitRoutes);
 
 const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
-    console.log(err);
+    console.error(err);
     res.status(500).json({ message: err.message });
 };
 app.use(errorHandler);
