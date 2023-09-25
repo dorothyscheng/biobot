@@ -6,7 +6,6 @@ const apiClient = create({
 });
 
 export const getKits = async (kitId: string): Promise<KitShippingDataViewModel[]> => {
-    console.log(process.env.API_URL);
     const response = await apiClient.post<KitShippingDataViewModel[]>(
         '/',
         { kitNumber: kitId },
