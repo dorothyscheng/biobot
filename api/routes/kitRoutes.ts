@@ -3,6 +3,6 @@ import getKit from '../controllers/getKit';
 
 const router = express.Router();
 
-router.get('/', getKit);
+router.post('/', getKit);
 
 export default router;
