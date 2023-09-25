@@ -15,14 +15,10 @@ class KitShippingData {
         const document = new Document<KitShippingDataViewModel, true>({
             document: {
                 id: 'id',
-                index: [
-                    {
-                        field: 'labelId',
-                        tokenize: 'full',
-                    },
-                ],
+                index: 'labelId',
                 store: true,
             },
+            tokenize: 'forward',
         });
         kitDataJson.forEach((d) => {
             document.add(d.id, {
