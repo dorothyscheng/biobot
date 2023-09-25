@@ -1,13 +1,14 @@
 type Props = {
     labelId: string;
     onChangeInput: (input: string) => void;
+    onSubmit: () => void;
 };
-export const SearchForm = ({ labelId, onChangeInput }: Props) => {
+export const SearchForm = ({ labelId, onChangeInput, onSubmit }: Props) => {
     return (
         <form
             onSubmit={(e) => {
                 e.preventDefault();
-                console.log('submit');
+                onSubmit();
             }}
             className={'flex align-bottom'}
         >

@@ -1,4 +1,4 @@
-import { SearchByLabelId } from '@/app/search/SearchByLabelId';
+import { SearchByLabelId } from '@/app/searchForm/SearchByLabelId';
 
 export default function Home() {
     return (
