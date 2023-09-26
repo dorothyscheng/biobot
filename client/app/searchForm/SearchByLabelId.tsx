@@ -5,7 +5,6 @@ import { KitShippingDataViewModel } from '@/api/KitShippingDataViewModel';
 import { AutocompleteResults } from '@/app/searchForm/AutocompleteResults';
 import labelIdService from '@/app/searchForm/LabelIdService';
 import { SearchForm } from '@/app/searchForm/SearchForm';
-import { SingleKitShippingResult } from '@/app/kitDisplay/SingleKitShippingResult';
 import { KitShippingResults } from '@/app/kitDisplay/KitShippingResults';
 
 export const SearchByLabelId = () => {

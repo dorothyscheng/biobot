@@ -5,7 +5,7 @@ type Props = {
 export const KitInfoItem = ({ label, value }: Props) => {
     return (
         <div className={'flex flex-col items-center'}>
-            <h2 className={'font-bold text-sm'}>{label}</h2>
+            <h3 className={'font-bold text-sm'}>{label}</h3>
             <p>{value}</p>
         </div>
     );

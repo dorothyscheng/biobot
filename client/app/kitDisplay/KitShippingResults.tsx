@@ -7,7 +7,7 @@ type Props = {
 export const KitShippingResults = ({ results }: Props) => {
     return (
         <div>
-            <h1 className={'font-bold text-lg my-5'}>Results ({results.length})</h1>
+            <h2 className={'font-bold text-lg my-5'}>Results ({results.length})</h2>
             <div className={'flex flex-col gap-6'}>
                 {results.map((r) => (
                     <SingleKitShippingResult key={`result-${r.id}`} kit={r} />
