@@ -21,8 +21,9 @@ From `./api` run `npm start`
 - Tailwind CSS
 
 ### Running the client 
-1. From `./client` run `npm run dev`
-2. Open [http://localhost:3000](http://localhost:3000) in your browser
+1. Create an `.env.local` file with `API_URL=http://localhost:4000`
+2. From `./client` run `npm run dev`
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Future Improvements
 
