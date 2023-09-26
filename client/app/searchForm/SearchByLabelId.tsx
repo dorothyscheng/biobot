@@ -18,13 +18,11 @@ export const SearchByLabelId = () => {
         const formatted = labelIdService.formatLabelId(cleaned);
         setLabelId(formatted);
 
-        // TODO: throttle search
         handleSearch(cleaned);
     };
 
     const onClickSubmit = () => {
         onChangeInput(labelId);
-        // TODO: display nice user message when no results found
     };
 
     const onSelectResult = (selected: KitShippingDataViewModel) => {
