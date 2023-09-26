@@ -10,9 +10,9 @@ export const SearchForm = ({ labelId, onChangeInput, onSubmit }: Props) => {
                 e.preventDefault();
                 onSubmit();
             }}
-            className={'flex align-bottom'}
+            className={'flex items-end'}
         >
-            <div className={'flex flex-col px-3'}>
+            <div className={'flex flex-col'}>
                 <label htmlFor={'kit-id'}>Enter your kit label id</label>
                 <input
                     id={'kit-id'}
@@ -21,12 +21,14 @@ export const SearchForm = ({ labelId, onChangeInput, onSubmit }: Props) => {
                     value={labelId}
                     placeholder={'XX-XXX-XXXX'}
                     required
-                    className={'text-black'}
+                    className={'text-black p-1 mt-1'}
                     onChange={(e) => onChangeInput(e.target.value)}
                     maxLength={11}
                 />
             </div>
-            <button type={'submit'}>Search</button>
+            <button type={'submit'} className={'border-2 rounded border-amber-500 p-2 h-fit ml-3'}>
+                Search
+            </button>
         </form>
     );
 };

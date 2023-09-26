@@ -42,12 +42,12 @@ export const SearchByLabelId = () => {
     };
 
     return (
-        <div className={'flex flex-row min-h-screen'}>
-            <div>
+        <div className={'flex flex-grow-1 justify-between'}>
+            <div className={'flex flex-col w-1/2'}>
                 <SearchForm labelId={labelId} onChangeInput={onChangeInput} onSubmit={onClickSubmit} />
                 <AutocompleteResults results={autocompleteResults} onSelectResult={onSelectResult} />
             </div>
-            {selected && <KitShippingResultDisplay kit={selected} />}
+            <div className={'flex w-1/2'}>{selected && <KitShippingResultDisplay kit={selected} />}</div>
         </div>
     );
 };
