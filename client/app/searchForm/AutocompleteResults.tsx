@@ -10,7 +10,7 @@ export const AutocompleteResults = ({ results, onSelectResult }: Props) => {
     return (
         <div className={'flex flex-col mt-1 w-3/4 bg-white text-black p-1'}>
             {results.map((r, index) => (
-                <div key={r.id}>
+                <div key={`autocomplete-${r.id}`}>
                     <p onClick={() => onSelectResult(r)} className={'cursor-pointer hover:bg-gray-200'}>
                         {r.formattedLabelId}
                     </p>

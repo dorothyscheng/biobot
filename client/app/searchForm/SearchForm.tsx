@@ -1,3 +1,5 @@
+import { Button } from '@/app/shared/Button';
+
 type Props = {
     labelId: string;
     onChangeInput: (input: string) => void;
@@ -26,9 +28,7 @@ export const SearchForm = ({ labelId, onChangeInput, onSubmit }: Props) => {
                     maxLength={11}
                 />
             </div>
-            <button type={'submit'} className={'border-2 rounded border-amber-500 p-2 h-fit ml-3'}>
-                Search
-            </button>
+            <Button type={'submit'} label={'Search'} />
         </form>
     );
 };

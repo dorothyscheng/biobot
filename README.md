@@ -33,5 +33,5 @@ From `./api` run `npm start`
 
 ### FE
 - Throttle search requests from client to API - Currently, search requests are sent on every keystroke in the input.
-- Display message to user when no search results are found - Currently, no results are displayed, but there is no message to the user. It could appear as though the app malfunctioned without any feedback.
 - Display message to user when invalid input is entered (non-digit characters). Currently those are sanitized, but there is no message to the user.
+- Loading indicator when clicking 'Search'

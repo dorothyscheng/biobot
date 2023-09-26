@@ -5,12 +5,13 @@ import { KitShippingDataViewModel } from '@/api/KitShippingDataViewModel';
 import { AutocompleteResults } from '@/app/searchForm/AutocompleteResults';
 import labelIdService from '@/app/searchForm/LabelIdService';
 import { SearchForm } from '@/app/searchForm/SearchForm';
-import { KitShippingResultDisplay } from '@/app/kitDisplay/KitShippingResultDisplay';
+import { SingleKitShippingResult } from '@/app/kitDisplay/SingleKitShippingResult';
+import { KitShippingResults } from '@/app/kitDisplay/KitShippingResults';
 
 export const SearchByLabelId = () => {
     const [labelId, setLabelId] = useState('');
     const [autocompleteResults, setAutocompleteResults] = useState<KitShippingDataViewModel[]>([]);
-    const [selected, setSelected] = useState<KitShippingDataViewModel | undefined>(undefined);
+    const [selected, setSelected] = useState<KitShippingDataViewModel[] | undefined>(undefined);
 
     const onChangeInput = (input: string) => {
         setSelected(undefined);
@@ -22,13 +23,15 @@ export const SearchByLabelId = () => {
     };
 
     const onClickSubmit = () => {
-        onChangeInput(labelId);
+        setSelected([...autocompleteResults]);
+        setAutocompleteResults([]);
+        setLabelId('');
     };
 
     const onSelectResult = (selected: KitShippingDataViewModel) => {
         setLabelId('');
         setAutocompleteResults([]);
-        setSelected(selected);
+        setSelected([selected]);
     };
 
     const handleSearch = async (searchTerm: string) => {
@@ -42,12 +45,12 @@ export const SearchByLabelId = () => {
     };
 
     return (
-        <div className={'flex flex-grow-1 justify-between'}>
-            <div className={'flex flex-col w-1/2'}>
+        <div className={'flex flex-col'}>
+            <div className={'flex flex-col'}>
                 <SearchForm labelId={labelId} onChangeInput={onChangeInput} onSubmit={onClickSubmit} />
                 <AutocompleteResults results={autocompleteResults} onSelectResult={onSelectResult} />
             </div>
-            <div className={'flex w-1/2'}>{selected && <KitShippingResultDisplay kit={selected} />}</div>
+            <div className={'flex'}>{selected && <KitShippingResults results={selected} />}</div>
         </div>
     );
 };
