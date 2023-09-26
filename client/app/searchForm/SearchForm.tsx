@@ -15,7 +15,9 @@ export const SearchForm = ({ labelId, onChangeInput, onSubmit }: Props) => {
             className={'flex items-end'}
         >
             <div className={'flex flex-col'}>
-                <label htmlFor={'kit-id'}>Enter your kit label id</label>
+                <label htmlFor={'kit-id'} className={'text-white'}>
+                    Enter your kit label id
+                </label>
                 <input
                     id={'kit-id'}
                     type={'text'}

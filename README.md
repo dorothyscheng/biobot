@@ -35,3 +35,4 @@ From `./api` run `npm start`
 - Throttle search requests from client to API - Currently, search requests are sent on every keystroke in the input.
 - Display message to user when invalid input is entered (non-digit characters). Currently those are sanitized, but there is no message to the user.
 - Loading indicator when clicking 'Search'
+- Integrate with FedEx API to display tracking updates directly in the app
